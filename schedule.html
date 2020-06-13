@@ -1,0 +1,11 @@
+---
+---
+{% assign daysOfTheWeek = site.data.schedule.meets.size %}
+<article id="schedule" class="{{ daysOfTheWeek }}-per-week">
+  {% for day in site.data.schedule.classes %}
+  <div class="day">
+    {% cycle site.data.schedule.meets %}
+    {{day | markdownify}}
+  </div>
+  {% endfor %}
+</article>
