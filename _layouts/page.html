@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
-{% include menu.html %}
-{% include title.html %}
-{{ content }}
+<header class="header">
+  {% include title.html %}
+  {% include menu.html %}
+</header>
+<main class="main">
+  {{ content }}
+</main>
+<footer class=".mdl-mini-footer">
+</footer>

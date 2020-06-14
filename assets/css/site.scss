@@ -1,7 +1,16 @@
 ---
 ---
 @import "variables";
+@import "contrast/contrast";
+@import "mdl-utils/mdl-colors";
 $daysOfTheWeek: {{ site.data.schedule.meets.size }};
+$primary: {{ site.data.course.primary_color }};
+$secondary: {{ site.data.course.secondary_color }};
+.header {
+  width: 100%;
+}
+
+// Schedule
 .schedule {
   display: flex;
   width: 100%;
