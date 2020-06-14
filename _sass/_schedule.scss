@@ -1,0 +1,21 @@
+---
+---
+@import "variables";
+article.schedule {
+  display: flex;
+  width: 100%;
+  max-width: 960px;
+  flex-wrap: wrap;
+  .week {
+    flex-grow: 4;
+    flex-basis: 100%;
+  }
+  .meeting {
+    flex-basis: 100% / {{ site.data.schedule.meets.size }};
+  }
+  #{$mq-mobile} {
+    .meeting {
+      flex-basis: 100%;
+    }
+  }
+}

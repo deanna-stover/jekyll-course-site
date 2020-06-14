@@ -1,5 +1,6 @@
 ---
 layout: page
+menu: Class Schedule
 ---
 {% assign daysOfTheWeek = site.data.schedule.meets.size %}
 {% assign date = site.data.schedule.start | date: "%s" %}
@@ -8,7 +9,7 @@ layout: page
 {% assign class = 0 %}
 {% assign meeting = 0 %}
 {% assign week = 1 %}
-<article id="schedule" class="{{ daysOfTheWeek }}-per-week">
+<article class="schedule" class="{{ daysOfTheWeek }}-per-week">
   {% for index in (0..max) %} 
     {% assign isWeek = class | modulo: daysOfTheWeek %}
     {% assign day = index | times: 86400 | plus: date %}
@@ -35,8 +36,8 @@ layout: page
       {% assign week = week | plus: 1 %}
     </div>
     {% endif %}
-    <div class="day">
-      <p>{{ day | date: "%a %m/%d" }}</p>
+    <div class="meeting">
+      <p class="date">{{ day | date: "%a %m/%d" }}</p>
       {% if holiday != nil %}
       <p>
         <strong>No Class</strong>

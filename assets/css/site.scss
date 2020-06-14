@@ -1,0 +1,29 @@
+---
+---
+@import "variables";
+$daysOfTheWeek: {{ site.data.schedule.meets.size }};
+.schedule {
+  display: flex;
+  width: 100%;
+  max-width: 960px;
+  flex-wrap: wrap;
+}
+
+.schedule .week {
+  flex-grow: 4;
+  flex-basis: 100%;
+}
+
+.schedule .meeting {
+  flex-basis: 100% / $daysOfTheWeek;
+}
+
+@media #{$mq-mobile} {
+  .schedule .meeting {
+    flex-basis: 100%;
+  }
+}
+
+.schedule .date {
+  font-weight: $ft-bold;
+}
