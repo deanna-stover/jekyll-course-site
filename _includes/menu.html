@@ -1,8 +1,0 @@
-<ul class="menu">
-  {% for node in site.pages %}
-    {% if node.menu == nil %}{% continue %}{% endif %}
-    <li class="item{% if page.url == node.url %} active{% endif %}">
-      <a href="{{ node.url }}">{{ node.menu }}</a>
-    </li>
-  {% endfor %}
-</ul>

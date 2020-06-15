@@ -5,22 +5,22 @@
 {% assign class = 0 %}
 {% assign meeting = 0 %}
 {% assign week = 1 %}
-<article class="schedule {{ daysOfTheWeek }}-per-week">
+<article class="schedule {{ daysOfTheWeek }}-per-week columns">
   {% for index in (0..max) %} 
     {% assign isWeek = class | modulo: daysOfTheWeek %}
     {% assign day = index | times: 86400 | plus: date %}
     {% assign weekDay = day | date: "%A" | downcase %}
     {% assign matchDay = day | date: "%Y-%m-%d" %}
-    {% assign isRedefined = site.data.schedule.redefined | find: "date", matchDay %}
-    {% assign holiday = site.data.schedule.holidays | find: "date", matchDay %}
-    {% unless site.data.schedule.meets contains weekDay or isRedefined != nil %}
+    {% assign isRedefined = site.data.schedule.redefined | where: "date", matchDay %}
+    {% assign holiday = site.data.schedule.holidays | where: "date", matchDay %}
+    {% unless site.data.schedule.meets contains weekDay or isRedefined.size != 0 %}
       {% continue %}
     {% endunless %}
     {% if isWeek == 0 %}
-    {% assign isUnit = site.data.schedule.units | find: "start", week %}
-    <div class="week">
-      {% if isUnit != nil %}
-      <h2>{{isUnit.title}}</h2>
+    {% assign isUnit = site.data.schedule.units | where: "start", week %}
+    <div class="week column col-12">
+      {% if site.data.schedule.units != nil and isUnit.size != 0 %}
+      <h2>{{isUnit[0].title}}</h2>
       {% endif %}
       {% if site.data.schedule.units == nil %}<h2>{% else %}<h3>{% endif %}
         Week {{ week }}
@@ -32,26 +32,26 @@
       {% assign week = week | plus: 1 %}
     </div>
     {% endif %}
-    <div class="meeting">
+    <div class="meeting column col-{{ 12 | divided_by: daysOfTheWeek | floor }}">
       <p class="date">{{ day | date: "%a %m/%d" }}</p>
-      {% if holiday != nil %}
+      {% if holiday.size != 0 %}
       <p>
         <strong>No Class</strong>
       </p>
       <p>
-      <em>{{ holiday.name }}</em>
+      <em>{{ holiday[0].name }}</em>
       </p>
       {% assign class = class | plus: 1 %}
       {% elsif meeting < site.data.schedule.classes.size %}
-      {% if isRedefined != nil %}
+      {% if isRedefined.size != 0 %}
       <p><strong>Redefined Day</strong></p>
       {% endif %}
-        {% if isRedefined == nil or site.data.schedule.meets contains isRedefined.is_a %}
+        {% if isRedefined.size == 0 or site.data.schedule.meets contains isRedefined[0].is_a %}
         {{ site.data.schedule.classes[meeting] | markdownify}}
         {% assign meeting = meeting | plus: 1 %}
         {% assign class = class | plus: 1 %}
         {% else %}
-        <p><em>No Class, Go to {{ isRedefined.is_a | capitalize }} Classes.</em></p>
+        <p><em>No Class, Go to {{ isRedefined[0].is_a | capitalize }} Classes.</em></p>
         {% endif %}
       {% endif %}
     </div>

@@ -1,0 +1,5 @@
+---
+theme: jekyll-theme-primer
+url: ""  # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""  # the subpath of your site, e.g. /blog
+title: "ENGL 334, Science Fiction"  # the name of your site, e.g. ACME Corp.
