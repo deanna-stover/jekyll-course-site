@@ -1,0 +1,29 @@
+---
+---
+@import "{{ site.theme }}";
+
+.js-toc {
+  background: white;
+}
+
+.js-toc ul,
+.js-toc ol {
+  padding-left: 1em;
+}
+
+.js-toc .is-active-link::before {
+  background-color: #0366d6;
+}
+
+@media (min-width: 768px) {
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    &:after,
+    &:before {
+      content: '';
+      display: table;
+    }
+  }
+}

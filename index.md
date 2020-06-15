@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: syllabus
 ---
 {% include course-header.html %}
 
