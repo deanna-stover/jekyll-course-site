@@ -1,11 +1,5 @@
 <header class="columns">
   <div class="column col-md-12">
-    <h2>Course Description</h2>
-    <blockquote>
-      {{site.data.course.description | markdownify}}
-    </blockquote>
-  </div>
-  <div class="column col-md-12">
     <h2>Course Information</h2>
   </div>
   <div class="column col-md-6">
@@ -36,4 +30,12 @@
     </ul>
     {% endif %}
   </div>
+  {% if site.data.course.description != nil %}
+  <div class="column col-md-12">
+    <h2>Course Description</h2>
+    <blockquote>
+      {{site.data.course.description | markdownify}}
+    </blockquote>
+  </div>
+  {%endif%}
 </header>

@@ -14,7 +14,7 @@
 {{ seo_tag | replace: site.title, title }}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     {% if site.toc %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.css">
     {% endif %}
   </head>
   <body>
@@ -24,13 +24,17 @@
           <h1><a href="{{ "/" | absolute_url }}">{{ title }}</a></h1>
         </div>
 
-        <div class="content column col-md-10">
+        {% if site.toc %}
+          <div class="js-toc column col-md-2 col-12 float-none float-md-right position-md-sticky">
+            {% comment %} <h2>Contents</h2> {% endcomment %}
+            {% comment %} {% include toc.html html=content sanitize=true h_max=1 ordered=true %} {% endcomment %}
+          </div>
+        {% endif %}
+
+      <div class="content column col-md-1{% if site.toc %}0{%else%}2{%endif%}">
           {{ content }}
         </div>
 
-        {% if site.toc %}
-        <div class="js-toc sticky column col-md-2 d-md-block d-none"></div>
-        {% endif %}
 
         {% if site.github.private != true and site.github.license %}
         <!-- <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray"> -->
@@ -39,11 +43,11 @@
         {% endif %}
       </div>
     </article>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js@4.1.0"></script>
     <script>anchors.add();</script>
     {% if site.toc %}
     <!-- Polyfill -->
-    <script src="https://cdn.jsdelivr.net/gh/wilddeer/stickyfill@2.1.0/dist/stickyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stickyfilljs@2.1.0"></script>
     <!-- Load TOC Script -->
     <script src="https://cdn.jsdelivr.net/gh/oncomouse/tocbot@master/dist/tocbot.min.js"></script>
     <script>

@@ -15,8 +15,18 @@
   background-color: #0366d6;
 }
 
+.position-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+  }
+}
 @media (min-width: 768px) {
-  .sticky {
+  .position-md-sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
