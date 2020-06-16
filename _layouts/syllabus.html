@@ -46,19 +46,22 @@
     <script src="assets/js/tocbot.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/tscanlin/tocbot@4.11.2/dist/tocbot.min.js"></script> -->
     <script>
+      var isMobile = matchMedia('min-width: 768px').matches
+    </script>
+    <script>
       tocbot.init({
         // Where to render the table of contents.
         tocSelector: '.js-toc',
         // Where to grab the headings to build the table of contents.
         contentSelector: '.content',
         // Which headings to grab inside of the contentSelector element.
-        headingSelector: 'h1, h2, h3',
+        headingSelector: isMobile ? 'h1' : 'h1, h2, h3',
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
       });
     </script>
     <script>
-      if (matchMedia('min-width: 768px').matches) {
+      if (!isMobile) {
         var elements = document.querySelectorAll('.sticky');
         Stickyfill.add(elements);
       }
