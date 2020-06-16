@@ -35,11 +35,14 @@
         <!--   This site is open source. {% github_edit_link "Improve this page" %}. -->
         <!-- </div> -->
         {% endif %}
-      </article>
       </div>
+    </article>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
+    <!-- Polyfills -->
     <script src="https://cdn.jsdelivr.net/gh/wilddeer/stickyfill@2.1.0/dist/stickyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/paulirish/matchMedia.js@0.3.2/matchMedia.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/paulirish/matchMedia.js@0.3.2/matchMedia.addListener.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
     <script>
       tocbot.init({
@@ -54,8 +57,10 @@
       });
     </script>
     <script>
-      var elements = document.querySelectorAll('.sticky');
-      //Stickyfill.add(elements);
+      if (matchMedia('min-width: 768px').matches) {
+        var elements = document.querySelectorAll('.sticky');
+        Stickyfill.add(elements);
+      }
     </script>
     {% if site.google_analytics %}
     <script>
