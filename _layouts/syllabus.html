@@ -50,20 +50,24 @@
     <!-- Load TOC Script -->
     <script src="https://cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.js" integrity="sha384-TnuMTlegqfBi40E9e3dO2qfmPVKDjLFCCgyZ5bR3SA/hYTJXI090bTbAr/AXO+bc" crossorigin="anonymous"></script>
     <script>
-      tocbot.init({
-        // Where to render the table of contents.
-        tocSelector: '.js-toc',
-        // Where to grab the headings to build the table of contents.
-        contentSelector: '.content',
-        // Which headings to grab inside of the contentSelector element.
-        headingSelector: 'h1, h2, h3',
-        // For headings inside relative or absolute positioned containers within content.
-        hasInnerContainers: true,
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initiate StickyFill:
+        Stickyfill.add(document.querySelectorAll('.sticky'));
+
+        // Initiate TOCBot:
+        tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.js-toc',
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.content',
+          // Which headings to grab inside of the contentSelector element.
+          headingSelector: 'h1, h2, h3',
+          // For headings inside relative or absolute positioned containers within content.
+          hasInnerContainers: true,
+        });
+      }, {
+        once: true,
       });
-    </script>
-    <script>
-      var elements = document.querySelectorAll('.sticky');
-      Stickyfill.add(elements);
     </script>
     {%endif%}
     {% if site.google_analytics %}
