@@ -1,4 +1,5 @@
 ---
+layout: default
 ---
 {% assign title = site.data.course.number | append: ", " | append: site.data.course.title %}
 {% if title == ", " %}
@@ -25,10 +26,7 @@
         </div>
 
         {% if site.toc %}
-          <div class="js-toc column col-md-2 float-none float-md-right position-md-sticky">
-            {% comment %} <h2>Contents</h2> {% endcomment %}
-            {% comment %} {% include toc.html html=content sanitize=true h_max=1 ordered=true %} {% endcomment %}
-          </div>
+          <div class="js-toc column col-md-2 d-none d-md-block float-md-right position-md-sticky"></div>
         {% endif %}
 
       <div class="content column col-md-1{% if site.toc %}0{%else%}2{%endif%}">
