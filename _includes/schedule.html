@@ -33,25 +33,24 @@
     </div>
     {% endif %}
     <div class="schedule__meeting">
-      <p class="schedule__date">{{ day | date: "%a %m/%d" }}</p>
-      {% if holiday.size != 0 %}
-      <p class="schedule__no-class">
-        No Class
-      </p>
-      <p class="schedule__no-class-name">
-        {{ holiday[0].name }}
-      </p>
       {% assign class = class | plus: 1 %}
-      {% elsif meeting < site.data.schedule.classes.size %}
+      <p class="schedule__date">{{ day | date: "%a %m/%d" }}</p>
       {% if isRedefined.size != 0 %}
-      <p class="schedule__redefined-day">Redefined Day</p>
+        <p class="schedule__redefined-day">Redefined Day</p>
       {% endif %}
+      {% if holiday.size != 0 %}
+        <p class="schedule__no-class">
+          No Class
+        </p>
+        <p class="schedule__no-class-name">
+          {{ holiday[0].name }}
+        </p>
+      {% else %}
         {% if isRedefined.size == 0 or site.data.schedule.meets contains isRedefined[0].is_a %}
-        {{ site.data.schedule.classes[meeting] | markdownify}}
-        {% assign meeting = meeting | plus: 1 %}
-        {% assign class = class | plus: 1 %}
-        {% else %}
-        <p class="schedule__redefined-class">No Class, Go to {{ isRedefined[0].is_a | capitalize }} Classes.</p>
+          {{ site.data.schedule.classes[meeting] | markdownify}}
+          {% assign meeting = meeting | plus: 1 %}
+        {% elsif isRedefined.size != 0 %}
+          <p class="schedule__redefined-class">No Class, Go to {{ isRedefined[0].is_a | capitalize }} Classes.</p>
         {% endif %}
       {% endif %}
     </div>
