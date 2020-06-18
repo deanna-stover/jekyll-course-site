@@ -1,8 +1,9 @@
 ---
 ---
-{% assign title = site.data.course.number | append: ", " | append: site.data.course.title %}
-{% if title == ", " %}
-{% assign title = site.title | default: page.title %}
+{% if site.data.course != nil and site.data.course.number != nil and site.data.course.title != nil %}
+  {% assign title = site.data.course.number | append: ", " | append: site.data.course.title %}
+{% else %}
+  {% assign title = page.title | default: site.title %}
 {% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
