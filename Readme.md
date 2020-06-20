@@ -32,7 +32,7 @@ The front matter has three keys:
 
 ## Editing the Schedule
 
-The only file you need to actually edit is `_data/schedule.yml`. It contains all of the information for the schedule grid and has comments explaining how to use it.
+Schedule information is defined in  `_data/schedule.yml`. Changing this file will update the schedule grid on your site.
 
 ### YAML Contents
 
@@ -64,4 +64,4 @@ While you forked your first syllabus from this repository, if you want to use th
 
 [Here are some instructions that can help with that](https://deanmalone.net/post/how-to-fork-your-own-repo-on-github/).
 
-Alternately, you might use [jekyll-syllabus](https://github.com/oncomouse/jekyll-syllabus), which is just the files need to generate the syllabus grid, and [my course repository](https://github.com/oncomouse/courses) to see how you can host many syllabuses in the same repository.
+Alternately, you might use [jekyll-syllabus](https://github.com/oncomouse/jekyll-syllabus), which is just the files needed to generate the syllabus grid, and [my course repository](https://github.com/oncomouse/courses) to see how you can host many syllabuses in the same repository.
