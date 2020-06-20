@@ -1,7 +1,7 @@
 ---
 ---
-{% if site.data.course != nil and site.data.course.number != nil and site.data.course.title != nil %}
-  {% assign title = site.data.course.number | append: ", " | append: site.data.course.title %}
+{% if page.course != nil and page.course.number != nil and page.course.title != nil %}
+  {% assign title = page.course.number | append: ", " | append: page.course.title %}
 {% else %}
   {% assign title = page.title | default: site.title %}
 {% endif %}
@@ -19,10 +19,10 @@
     {% endif %}
   </head>
   <body>
-    <article class="container-lg px-3 my-5 markdown-body">
+    <article class="container-lg px-1 px-md-3 my-5 markdown-body">
       <div class="columns">
         <div class="column col-12">
-          <h1><a href="{{ "/" | absolute_url }}">{{ title }}</a></h1>
+          <h1 class="class="border-bottom-0"><a href="{{ "/" | absolute_url }}">{{ title }}</a></h1>
         </div>
 
         {% if site.toc %}
@@ -30,6 +30,7 @@
         {% endif %}
 
       <div class="content column col-md-1{% if site.toc %}0{%else%}2{%endif%}">
+          {% include course_information.html %}
           {{ content }}
         </div>
 

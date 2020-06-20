@@ -8,6 +8,28 @@ Once your fork has been created, you need to [set the publishing source for GitH
 
 Once those two steps are done, you can edit `index.md` to add content to your syllabus. Also see ["Editing the Schedule"](#editing-the-schedule) for instructions on setting daily course activities and configuring other aspects of your course.
 
+## Setting Course Information
+
+The file `index.md` contains YAML front matter the describes the course, providing details about meetings times, instructors, office hours, etc., to help display the course properly.
+
+The front matter has three keys:
+
+* `layout` -- This must be set to `syllabus`. **Do not edit it**.
+* `course` -- A mapping (hash) containing the following keys:
+	* `term` -- A string containing the semester/quarter and year
+	* `number` -- A string containing the catalog designation of the course
+	* `meetings` -- A sequence (list) of mappings (hashes) describing when and where the course meets. Each entry has the following keys:
+		* `location` -- A string containing the room where the course meets
+		* `time` -- A string containing the time when the course meets
+	* `title` -- *optional* A string containing the course's title
+	* `description` -- *optional* A string describing the class
+* `instructors` -- A sequence (list) of mappings (hashes) describing the course instructors. Each entry has the following keys:
+	* `name` -- A string naming the instructor
+	* `email` -- A string containing the instructor's email
+	* `office` -- A sequence (list) of mappings (hashes) describing the instructor's office hours. Each entry has the following keys:
+		* `hours` -- A string containing the day and time of the office hours
+		* `location` -- *optional* A string containing the location of the office hours. Set `hours` to "By Appointment" for a by appointment availability.
+
 ## Editing the Schedule
 
 The only file you need to actually edit is `_data/schedule.yml`. It contains all of the information for the schedule grid and has comments explaining how to use it.
