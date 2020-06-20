@@ -1,11 +1,12 @@
 ---
 url: ""  # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/jekyll-course-site"  # the subpath of your site, e.g. /blog
-toc: true
+toc: true  # set to false if you want to turn off the table of contents
 
 #####
 # Don't Edit Below this Line
 #####
 
 markdown: kramdown
-title: "Jekyll Course Theme"  # Don't change this; title is built via the _data/course.yml file
+# Don't change this; title is built via the _data/course.yml file
+title: "Jekyll Course Theme"
