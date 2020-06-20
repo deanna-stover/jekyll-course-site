@@ -41,3 +41,5 @@ Read more about YAML here: [YAML](https://yaml.org/)
 While you forked your first syllabus from this repository, if you want to use this site for multiple syllabuses, you will have to fork your own fork, which requires some command line usage.
 
 [Here are some instructions that can help with that](https://deanmalone.net/post/how-to-fork-your-own-repo-on-github/).
+
+Alternately, you might use [jekyll-syllabus](https://github.com/oncomouse/jekyll-syllabus), which is just the files need to generate the syllabus grid, and [my course repository](https://github.com/oncomouse/courses) to see how you can host many syllabuses in the same repository.
