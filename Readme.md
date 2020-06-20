@@ -1,4 +1,4 @@
-# jekyll-course-site -- Host syllabuses on GitHub Pages with Ease!
+# jekyll-course-site - Host syllabuses on GitHub Pages with Ease!
 
 ## Getting Started
 
@@ -18,21 +18,21 @@ The file contains a series of keys, optional ones are marked as such. A couple o
 
 The keys are as follows:
 
-* `start` -- a string containing the date on which the semester starts.
-* `end` -- a string containing the date on which the semester ends.
-* `meets` -- a sequence (list) containing days of the week on which your course meets.
-* `classes` -- a sequence (list) of strings or blocks that describe the activities of each class in order. Each item in the sequence will be formatted using Markdown.
-* `holidays` -- *optional* a sequence (list) of mappings (hashes) that define holidays. Each entry has two keys:
-	* `date` -- a string containing the date of the holiday.
-	* `name` -- a string containing the name or description of the holiday.
-* `redefined` -- *optional* a sequence (list) of mappings (hashes) that define redefined days. Each entry has two keys:
-	* `date` -- a string containing the date being redefined.
-	* `is_a` -- a day of the week string containing what the redefined day functions as.
-* `weeks` -- *optional* a mapping (hash) of strings. Each key in the mapping must be a week number represented as a string (`1` becomes `"1"`, etc.) that maps to the title for a given week of instruction.
-* `units` -- *optional* a sequence (list) of mappings (hashes) that defines information about any units your course is divided into. Each entry has three keys:
-	* `start` -- a number representing the week of the semester on which a given unit starts.
-	* `title` -- *optional* a string providing a unit title.
-	* `description` -- *optional* a string or block containing a description of the unit. Will be formatted as Markdown.
+* `start` - a string containing the date on which the semester starts.
+* `end` - a string containing the date on which the semester ends.
+* `meets` - a sequence (list) containing days of the week on which your course meets.
+* `classes` - a sequence (list) of strings or blocks that describe the activities of each class in order. Each item in the sequence will be formatted using Markdown.
+* `holidays` - *optional* a sequence (list) of mappings (hashes) that define holidays. Each entry has two keys:
+	* `date` - a string containing the date of the holiday.
+	* `name` - a string containing the name or description of the holiday.
+* `redefined` - *optional* a sequence (list) of mappings (hashes) that define redefined days. Each entry has two keys:
+	* `date` - a string containing the date being redefined.
+	* `is_a` - a day of the week string containing what the redefined day functions as.
+* `weeks` - *optional* a mapping (hash) of strings. Each key in the mapping must be a week number represented as a string (`1` becomes `"1"`, etc.) that maps to the title for a given week of instruction.
+* `units` - *optional* a sequence (list) of mappings (hashes) that defines information about any units your course is divided into. Each entry has three keys:
+	* `start` - a number representing the week of the semester on which a given unit starts.
+	* `title` - *optional* a string providing a unit title.
+	* `description` - *optional* a string or block containing a description of the unit. Will be formatted as Markdown.
 
 Read more about YAML here: [YAML](https://yaml.org/)
 
