@@ -40,19 +40,24 @@ Schedule information is defined in  `_data/schedule.yml`. Changing this file wil
 
 ### YAML Contents
 
-The file contains a series of keys, optional ones are marked as such. A couple of notes, dates must be written in the form `YYYY-MM-DD` ('1924-03-21' or '2000-12-14') and you must use two digits for months and days, even if they are less than 10. Days of the week must be written in lower case ('monday' or 'saturday').
+The schedule file contains a series of keys, described below with optional ones are marked as such.
 
-The keys are as follows:
+Two important notes about data formatting:
 
-* `start` - a string containing the date on which the semester starts.
-* `end` - a string containing the date on which the semester ends.
-* `meets` - a sequence (list) containing days of the week on which your course meets.
+1. **Dates** must be written in the form `YYYY-MM-DD` ('1924-03-21' or '2000-12-14') with two digits for months and days, even if they are less than 10.
+1. **Days** of the week must be written in lower case ('monday' or 'saturday').
+
+The keys in `schedule.yml` are as follows:
+
+* `start` - a string containing the **date** on which the semester starts.
+* `end` - a string containing the **date** on which the semester ends.
+* `meets` - a sequence (list) containing **days** of the week on which your course meets.
 * `classes` - a sequence (list) of strings or blocks that describe the activities of each class in order. Each item in the sequence will be formatted using Markdown.
 * `holidays` - *optional* a sequence (list) of mappings (hashes) that define holidays. Each entry has two keys:
-	* `date` - a string containing the date of the holiday.
+	* `date` - a string containing the **date** of the holiday.
 	* `name` - a string containing the name or description of the holiday.
 * `redefined` - *optional* a sequence (list) of mappings (hashes) that define redefined days. Each entry has two keys:
-	* `date` - a string containing the date being redefined.
+	* `date` - a string containing the **date** being redefined.
 	* `is_a` - a day of the week string containing what the redefined day functions as.
 * `weeks` - *optional* a mapping (hash) of strings. Each key in the mapping must be a week number represented as a string (`1` becomes `"1"`, etc.) that maps to the title for a given week of instruction.
 * `units` - *optional* a sequence (list) of mappings (hashes) that defines information about any units your course is divided into. Each entry has three keys:
