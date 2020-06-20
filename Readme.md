@@ -14,7 +14,7 @@ Once those two steps are done, you can edit `index.md` to add content to your sy
 
 ## Setting Course Information
 
-The file `index.md` contains YAML front matter the describes the course, providing details about meetings times, instructors, office hours, etc., to help display the course properly.
+The file `index.md` contains YAML front matter that describes the course, providing details about meetings times, instructors, office hours, etc., to help display the course properly.
 
 The front matter has three keys:
 
