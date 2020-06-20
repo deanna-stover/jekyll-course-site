@@ -1,5 +1,9 @@
 # jekyll-course-site - Host syllabuses on GitHub Pages with Ease!
 
+This repository provides a starting point for creating simple, data-driven syllabus websites using GitHub Pages.
+
+This repository's simplifies course scheduling by using a YAML data structure (see ["Editing the Schedule"](#editing-the-schedule) below for specifics) to describe daily class activities and basic information about the semester (start date, holidays, etc.). From this data structure, the site automatically generates the days of the week and calendar dates for each activity, letting you change your course's schedule without worrying about what activity is happening on which day of the week. Jekyll does all the monotonous work for you!
+
 ## Getting Started
 
 To get started with your first syllabus website, you need to [fork this repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository).
